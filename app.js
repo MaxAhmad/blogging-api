@@ -8,7 +8,10 @@ const userRouter = require('./Routes/userRoute');
 const app = express();
 
 
-app.use(express.json);
+app.use(express.json());
+
+
+app.use('/blog', blogRouter)
 
 
 
