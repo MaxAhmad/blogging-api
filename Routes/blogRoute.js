@@ -1,23 +1,21 @@
-const express = require('express')
+const express = require("express");
 
-const blogController = require('./../Controllers/blogController')
+const blogController = require("./../Controllers/blogController");
+const authController = require("./../Controllers/authController");
 
-const blogRoute = express.Router()
+const blogRoute = express.Router();
 
+blogRoute.post("/", authController.authorize, blogController.createBlogPost);
 
-blogRoute.post('/', blogController.createBlogPost)
+blogRoute.get("/:id", blogController.getBlogPost);
 
-blogRoute.get('/:id', blogController.getBlogPost)
+//blogRoute.route('/tour-stats').get(blogController.searchBlog)
+blogRoute.get("/search/:searchId", blogController.searchBlog);
 
-blogRoute.get('/', blogController.getAllBlogPost)
+blogRoute.get("/", blogController.getAllBlogPost);
 
-blogRoute.patch('/:id', blogController.updateBlog)
+blogRoute.patch("/:id", authController.authorize, blogController.updateBlog);
 
-blogRoute.delete('/:id', blogController.deleteBlog)
+blogRoute.delete("/:id", authController.authorize, blogController.deleteBlog);
 
-
-module.exports = blogRoute
-
-
-
-
+module.exports = blogRoute;

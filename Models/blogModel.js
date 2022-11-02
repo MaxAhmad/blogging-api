@@ -17,16 +17,23 @@ const blogSchema = new mongoose.Schema({
         unique: true
     },
     state: {
-        type: String,
-        default: 1
+        type: Number,
+        default: 1,
     },
     read_count: {
         type: Number,
-        default: 0
+        default: 0,
     },
     body: {
         type: String,
-    }
+    },
+    tags: {
+        type: String
+    },
+    reading_time: {
+        type: String,
+        select: true
+    }  
 
 },
 { timestamps: true }
