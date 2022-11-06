@@ -92,7 +92,7 @@
             "lastname": "doe",
             "username": 'jon_doe",
         }
-}
+      }
     ```
 
 ### Login User
@@ -112,7 +112,7 @@
         message: 'Login successful',
         token: 'sjlkafjkldsfjsd'
     }
-   ``` 
+ ``` 
 ### Create Blog Post
 - Route: /orders
 - Method: POST
@@ -173,6 +173,7 @@
 - createdAt:
     Responses:
       Success
+      
            ``` {   
                 state: 1,
                 reading_time: 2 minutes read,
@@ -184,8 +185,8 @@
                 read_count: 2,
                 body: the experience of software development is not rosey as seen by others outside the tech world,
                 updatedAt: Mon Oct 31 2022 08:35:00 GMT+0100
-            }
-      ```
+                }
+            ```
 
 
 
