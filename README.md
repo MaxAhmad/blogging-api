@@ -188,7 +188,7 @@
                 body: the experience of software development is not rosey as seen by others outside the tech world,
                 updatedAt: Mon Oct 31 2022 08:35:00 GMT+0100
                 }
-            ```
+           
 
 
 
