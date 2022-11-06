@@ -1,6 +1,7 @@
 const path = require("path");
 const express = require("express");
 const cookieParser = require("cookie-parser");
+const cors = require('cors')
 
 const blogRouter = require("./Routes/blogRoute");
 const userRouter = require("./Routes/userRoute");
@@ -14,6 +15,8 @@ app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 
 app.use(express.static(path.join(__dirname, "public")));
+
+app.use(cors({origin: '*'}));
 
 app.use(express.json());
 app.use(cookieParser()); // Cookie-parser for making cookie available in the browser
