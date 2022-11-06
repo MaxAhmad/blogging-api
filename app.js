@@ -16,7 +16,9 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(cors());
+app.use(cors({
+  origin: ['http://127.0.0.1:4000/user/login', 'http://127.0.0.1:4000/user/logout', 'http://127.0.0.1:4000/user/signup']
+}));
 
 app.use(express.json());
 app.use(cookieParser()); // Cookie-parser for making cookie available in the browser
