@@ -136,8 +136,8 @@
               total_price: 900,
               created_at: Mon Oct 31 2022 08:35:00 GMT+0100,
               items: [{ name: 'chicken pizza', price: 900, size: 'm', quantity: 1}]
-          }
-           ```
+             }
+         ```
 ### Get Blog Post
 - Route: /orders/:id
 - Method: GET
@@ -146,7 +146,8 @@
 - Responses
     Success
          
-         ```{
+         ```  
+         {
                 state: 1,
                 reading_time: 2 minutes read,
                 createdAt: Mon Oct 31 2022 08:35:00 GMT+0100,
@@ -157,7 +158,8 @@
                 read_count: 2,
                 body: the experience of software development is not rosey as seen by others outside the tech world,
                 updatedAt: Mon Oct 31 2022 08:35:00 GMT+0100
-          }
+             }
+               
           ```
 ### Get All Post
 - Route: /orders
