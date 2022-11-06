@@ -71,6 +71,7 @@
 - Route: /signup
 - Method: POST
 - Body:
+- ```
       {
       "email": "doe@example.com",
       "password": "Password1",
@@ -78,7 +79,7 @@
       "lastname": "doe",
       "username": 'jon_doe",
     }
-    
+   ```
 - Responses:
     Success
      <script>
