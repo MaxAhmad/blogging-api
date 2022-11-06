@@ -10,11 +10,7 @@ userRoute.post("/signup", authController.signup);
 
 userRoute.post("/login", authController.login);
 
-// userRoute.post('/forgotPassword', authController.forgotPassword)
-
-// userRoute.patch('/resetPassword/:token', authController.resetPassword)
-
-// userRoute.patch('/updatePassword',authController.protect, authController.updatePassword)
+userRoute.get("/logout", authController.logout);
 
 userRoute.post("/", userController.createUser);
 

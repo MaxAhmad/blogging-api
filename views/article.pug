@@ -1,0 +1,42 @@
+extends base
+
+block content
+
+    section.section-header
+        .header__hero
+            .header__hero-overlay &nbsp;
+
+        .heading-box
+            h1.heading-primary
+                span= blog.title 
+            
+
+    section.section-description
+        .overview-box
+            div
+                .overview-box__group
+                    h2 Quick facts
+                    .overview-box__detail
+                        svg.overview-box__icon
+                            use(xlink:href='/img/icons.svg#icon-user')
+                        span.overview-box__label Author
+                        span.overview-box__text= blog.author
+                    .overview-box__detail
+                        svg.overview-box__icon
+                            use(xlink:href='/img/icons.svg#icon-trending-up')
+                        span.overview-box__label Published
+                        - const date = blog.createdAt.toLocaleString('en-us', {month: 'long', year: 'numeric'})
+                        span.overview-box__text= date 
+                    .overview-box__detail
+                        svg.overview-box__icon
+                            use(xlink:href='/img/icons.svg#icon-clock')
+                        span.overview-box__text= blog.reading_time
+                    .overview-box__detail
+                        svg.overview-box__icon
+                            use(xlink:href='/img/icons.svg#icon-star')
+                        span.overview-box__text= `${blog.read_count} times read`
+
+        .description-box
+            h2.heading-secondary= blog.title 
+            p.description__text= blog.body 
+            

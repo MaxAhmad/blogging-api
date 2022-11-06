@@ -1,0 +1,22 @@
+extends base 
+
+block content 
+    main.main
+        .login-form
+            h2.heading-secondary Create Your Article
+            form.form-create
+                .form__group
+                    label.form__label(for='title') Title 
+                    input#title.form__input(type='text', placeholder='Title', required)
+                .form__group
+                    label.form__label(for='description') Description
+                    input#description.form__input(type='text', placeholder='Description', required)
+                .form__group
+                    label.form__label(for='description') Tags
+                    input#tags.form__input(type='text', placeholder='Tags', required)
+                .form__group
+                    label.form__label(for='body')
+                    |  
+                    textarea#text_area.form__input(type='text',style= 'height: 150px', placeholder='Type your post here' required)
+                    |  
+                    button.btn.btn--green(style= 'margin-top: 30px') Create Article 

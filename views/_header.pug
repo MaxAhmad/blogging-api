@@ -1,0 +1,13 @@
+header.header
+  nav.nav.nav--tours
+    a.nav__el(href='/') All Post
+  nav.nav.nav--user
+    if user
+        a.nav__el(href='/myArticles') My Articles 
+        a.nav__el(href='/createPost') Create Article 
+        a.nav__el.nav__el--logout Log out
+        a.nav__el(href='/me')
+          span= user.first_name
+    else
+      a.nav__el(href='/login') Log in
+      a.nav__el.nav__el--cta(href='/signup') Sign up

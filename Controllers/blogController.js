@@ -1,8 +1,9 @@
 const moment = require("moment");
 
 const Blog = require("./../Models/blogModel");
-const User = require("./../Models/userModel");
 
+
+// Create Blog post handler
 exports.createBlogPost = async (req, res) => {
   try {
     const { first_name, last_name } = req.user;
@@ -28,7 +29,9 @@ exports.createBlogPost = async (req, res) => {
         blog,
       },
     });
-  } catch (err) {}
+  } catch (err) {
+    return next(new Error("Invalid Operation", 422))
+  }
 };
 
 exports.getBlogPost = async (req, res) => {
@@ -57,21 +60,12 @@ exports.getBlogPost = async (req, res) => {
       },
     });
   } catch (err) {
-
-    
-    res.status(404).json({
-      status: "fail",
-      message: err,
-    });
+    return next(new Error("Bad Request", 400))
   }
 };
 
 exports.getAllBlogPost = async (req, res) => {
   try {
-    //It should be filterable by state
-    //It should also be searchable by author, title and tags.
-    //It should also be orderable by read_count, reading_time and timestamp
-    //console.log(res.blog[tags])
     const { query } = req;
     let {
       post = "asc",
@@ -121,10 +115,7 @@ exports.getAllBlogPost = async (req, res) => {
       },
     });
   } catch (err) {
-    res.status(404).json({
-      status: "fail",
-      message: err,
-    });
+    return next(new Error("Bad Request", 400))
   }
 };
 
@@ -187,13 +178,11 @@ exports.updateBlog = async (req, res) => {
       },
     });
   } catch (err) {
-    res.status(400).json({
-      status: "fail",
-      message: err,
-    });
+    return next(new Error("Invalid Operation", 422))
   }
 };
 
+//Delete Blog Post
 exports.deleteBlog = async (req, res) => {
   try {
     const blog = await Blog.findByIdAndDelete(req.params.id);
@@ -205,13 +194,11 @@ exports.deleteBlog = async (req, res) => {
       },
     });
   } catch (err) {
-    res.status(404).json({
-      status: "fail",
-      message: err,
-    });
+    return next(new Error("Invalid Operation", 422))
   }
 };
 
+//Search API for Searching by author, title and tags
 exports.searchBlog = async (req, res, next) => {
   const blog = await Blog.find({
     $or: [

@@ -9,7 +9,6 @@ blogRoute.post("/", authController.authorize, blogController.createBlogPost);
 
 blogRoute.get("/:id", blogController.getBlogPost);
 
-//blogRoute.route('/tour-stats').get(blogController.searchBlog)
 blogRoute.get("/search/:searchId", blogController.searchBlog);
 
 blogRoute.get("/", blogController.getAllBlogPost);

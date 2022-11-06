@@ -1,0 +1,30 @@
+extends base 
+
+block content
+    main.main 
+        .card-container 
+
+            each blog in blogs
+                .card
+                    .card__header
+                        .card__picture
+                            .card__picture-overlay &nbsp;
+                            
+                        h3.heading-tertirary
+                            
+                            span= blog.title
+
+                    .card__details
+                        .overview-box__detail
+                            svg.overview-box__icon
+                                use(xlink:href='/img/icons.svg#icon-user')
+                            
+                            h4.card__sub-heading= blog.author 
+                        .overview-box__detail
+                            svg.overview-box__icon
+                                use(xlink:href='/img/icons.svg#icon-clock')
+                            span.overview-box__label= blog.reading_time
+                        p.card__text= blog.description 
+                        
+                    .card__footer
+                        a.btn.btn--green.btn--small(href=`/article/${blog.title}`) Read 
