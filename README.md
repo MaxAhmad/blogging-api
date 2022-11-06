@@ -1,5 +1,10 @@
 # blogging-api
 
+## Description
+
+he general idea here is that the api has a general endpoint that shows a list of articles that have been created by different people, 
+and anybody that calls this endpoint, should be able to read a blog created by them or other users
+
 ## Requirements
 
 - Users should have a first_name, last_name, email, password
@@ -27,6 +32,23 @@
 - pull this repo
 - update env with example.env
 - run npm run start:dev
+
+### Dependencies
+
+- axios
+- bcryptjs
+- cookie-parser
+- dotenv
+- express
+- jsonwebtoken
+- moment
+- mongoose
+- nodemon
+- pug
+- slugify
+- jest
+- slug
+- supertest
 
 ## Base URL
 
@@ -93,7 +115,7 @@
             "username": 'jon_doe",
         }
       }
-    ```
+   
 
 ### Login User
 - Route: /login
@@ -104,7 +126,7 @@
         "password": "Password1",
         "username": 'jon_doe",
       }
-      ```
+      
 - Responses:
     Success
 ```
