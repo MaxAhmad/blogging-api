@@ -71,7 +71,7 @@
 - Route: /signup
 - Method: POST
 - Body:
-- ```
+```
       {
       "email": "doe@example.com",
       "password": "Password1",
@@ -82,7 +82,7 @@
    ```
 - Responses:
     Success
-     <script>
+     ```
     {
         message: 'Signup successful',
         user: {
@@ -93,45 +93,51 @@
             "username": 'jon_doe",
         }
 }
-    <script/>
+    ```
 
 ### Login User
 - Route: /login
 - Method: POST
 - Body:
-      {
+     ```
+     {
         "password": "Password1",
         "username": 'jon_doe",
       }
+      ```
 - Responses:
     Success
-
+```
     {
         message: 'Login successful',
         token: 'sjlkafjkldsfjsd'
     }
-    
+   ``` 
 ### Create Blog Post
 - Route: /orders
 - Method: POST
 - Header
   -- Authorization: Bearer {token}
 - Body:
+    ```
     {
             Title: The Developer Experience,
             description: A behind the scence experience of the software developer experience,
             tags: Software, Experience,
             body: the experience of software development is not rosey as seen by others outside the tech world,
     }
+    ```
+    
 - Responses:
     Success
-          {
+         
+         ```{
               state: 1,
               total_price: 900,
               created_at: Mon Oct 31 2022 08:35:00 GMT+0100,
               items: [{ name: 'chicken pizza', price: 900, size: 'm', quantity: 1}]
           }
-
+           ```
 ### Get Blog Post
 - Route: /orders/:id
 - Method: GET
@@ -139,7 +145,8 @@
    -- Authorization: Bearer {token}
 - Responses
     Success
-          {
+         
+         ```{
                 state: 1,
                 reading_time: 2 minutes read,
                 createdAt: Mon Oct 31 2022 08:35:00 GMT+0100,
@@ -151,6 +158,7 @@
                 body: the experience of software development is not rosey as seen by others outside the tech world,
                 updatedAt: Mon Oct 31 2022 08:35:00 GMT+0100
           }
+          ```
 ### Get All Post
 - Route: /orders
 - Method: GET
@@ -165,7 +173,7 @@
 - createdAt:
     Responses:
       Success
-            {   
+           ``` {   
                 state: 1,
                 reading_time: 2 minutes read,
                 createdAt: Mon Oct 31 2022 08:35:00 GMT+0100,
@@ -177,7 +185,7 @@
                 body: the experience of software development is not rosey as seen by others outside the tech world,
                 updatedAt: Mon Oct 31 2022 08:35:00 GMT+0100
             }
-
+      ```
 
 
 
