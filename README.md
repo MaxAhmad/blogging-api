@@ -81,7 +81,7 @@
     
 - Responses:
     Success
-
+     <script>
     {
         message: 'Signup successful',
         user: {
@@ -92,6 +92,7 @@
             "username": 'jon_doe",
         }
 }
+    <script/>
 
 ### Login User
 - Route: /login
