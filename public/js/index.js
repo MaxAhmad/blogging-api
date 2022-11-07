@@ -20,7 +20,7 @@ const login = async (email, password) => {
   try {
     const res = await axios({
       method: "POST",
-      url: "https://max-blog-project.cyclic.app/login",
+      url: "https://max-blog-project.cyclic.app/user/login",
       data: {
         email,
         password,
@@ -64,7 +64,7 @@ const singUp = async (
   try {
     const res = await axios({
       method: "POST",
-      url: "http://127.0.0.1:4000/user/signup",
+      url: "https://max-blog-project.cyclic.app/user/signup",
       data: {
         first_name,
         last_name,
