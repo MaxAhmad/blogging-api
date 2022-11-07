@@ -29,9 +29,8 @@ and anybody that calls this endpoint, should be able to read a blog created by t
 
 ## Set Up
 - Install NodeJS, mongodb
-- pull this repo
-- update env with example.env
-- run npm run start:dev
+- update env with config.env
+- run npm run start
 
 ### Dependencies
 
@@ -47,11 +46,10 @@ and anybody that calls this endpoint, should be able to read a blog created by t
 - pug
 - slugify
 - jest
-- slug
 - supertest
 
 ## Base URL
-
+(https://max-blog-project.cyclic.app/)
 
 ## Models
 
