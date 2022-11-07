@@ -78,7 +78,7 @@ const singUp = async (
     if (res.data.status === "success") {
       showAlert("success", "Registerd successfully!");
       window.setTimeout(() => {
-        location.assign("/login");
+        location.assign("/");
       }, 1500);
     }
     return;
