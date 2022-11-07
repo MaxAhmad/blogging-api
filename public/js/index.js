@@ -44,7 +44,7 @@ const logout = async () => {
   try {
     const res = await axios({
       method: "GET",
-      url: "http://127.0.0.1:4000/user/logout",
+      url: "https://max-blog-project.cyclic.app/user/logout",
     });
     if ((res.data.status = "success")) location.assign('/');
   } catch (err) {
@@ -92,7 +92,7 @@ const createPost = async (title, description, tags, body) => {
   try {
     const res = await axios({
       method: "POST",
-      url: "http://127.0.0.1:4000/blog",
+      url: "https://max-blog-project.cyclic.app/blog",
       data: {
         title,
         description,
