@@ -49,7 +49,7 @@ and anybody that calls this endpoint, should be able to read a blog created by t
 - supertest
 
 ## Base URL
-(https://max-blog-project.cyclic.app/)
+https://max-blog-project.cyclic.app/
 
 ## Models
 
