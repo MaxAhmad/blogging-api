@@ -126,8 +126,8 @@ if (form) {
 if (form) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const first_name = document.getElementById("firstName").value;
-    const last_name = document.getElementById("lastName").value;
+    const first_name = document.getElementById("first_name").value;
+    const last_name = document.getElementById("last_name").value;
     const username = document.getElementById("username").value;
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
@@ -145,7 +145,7 @@ if (formCreate) {
     const title = document.getElementById("title").value;
     const description = document.getElementById("description").value;
     const tags = document.getElementById("tags").value;
-    const body = document.getElementById("text_area").value;
+    const body = document.getElementById("body").value;
     createPost(title, description, tags, body);
     return;
   });
