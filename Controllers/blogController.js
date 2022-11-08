@@ -59,7 +59,7 @@ exports.getBlogPost = async (req, res) => {
       },
     });
   } catch (err) {
-    return next(new Error(err.message, 404))
+    return next(new Error(err.message))
   }
 };
 
@@ -114,7 +114,7 @@ exports.getAllBlogPost = async (req, res) => {
       },
     });
   } catch (err) {
-    return next(new Error(err.message, 400))
+    return next(new Error(err.message))
   }
 };
 
