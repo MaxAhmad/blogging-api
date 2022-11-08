@@ -36,10 +36,9 @@ and anybody that calls this endpoint, should be able to read a blog created by t
 [click Here] https://max-blog-project.cyclic.app/
 - You will be redirected to the home route
 - You can read blog post
-- To create a blog Post 
-```
-       Sign up to create an account to get access to create a blog
-```      
+- To create a blog Post;
+     * Sign up to create an account to get access to create a blog
+    
 
 ### Dependencies
 
