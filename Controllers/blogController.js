@@ -4,7 +4,7 @@ const Blog = require("./../Models/blogModel");
 
 
 // Create Blog post handler
-exports.createBlogPost = async (req, res) => {
+exports.createBlogPost = async (req, res, next) => {
   try {
     const { first_name, last_name } = req.user;
 
@@ -24,13 +24,12 @@ exports.createBlogPost = async (req, res) => {
 
     res.status(201).json({
       status: "success",
-      //reading_time : readTime + " Minute read",
       data: {
         blog,
       },
     });
   } catch (err) {
-    return next(new Error("Invalid Operation", 422))
+    return next(new Error(err.message))
   }
 };
 
@@ -60,7 +59,7 @@ exports.getBlogPost = async (req, res) => {
       },
     });
   } catch (err) {
-    return next(new Error("Bad Request", 400))
+    return next(new Error(err.message, 404))
   }
 };
 
@@ -115,7 +114,7 @@ exports.getAllBlogPost = async (req, res) => {
       },
     });
   } catch (err) {
-    return next(new Error("Bad Request", 400))
+    return next(new Error(err.message, 400))
   }
 };
 
