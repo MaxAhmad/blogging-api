@@ -8,7 +8,7 @@ const app = require('./app')
 
 const DB = process.env.DATABASE
 
-mongoose.connect(DB, {}).then(() => {
+exports.dbConnection = mongoose.connect(DB, {}).then(() => {
     console.log('connected to DB')
 })
 

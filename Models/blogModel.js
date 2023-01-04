@@ -1,45 +1,41 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose")
 
-
-
-const blogSchema = new mongoose.Schema({
+const blogSchema = new mongoose.Schema(
+  {
     title: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     description: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     author: {
-        type: String,
-        runValidators: false
+      type: String,
+      runValidators: false,
     },
     state: {
-        type: Number,
-        default: 1,
+      type: Number,
+      default: 1,
     },
     read_count: {
-        type: Number,
-        default: 0,
+      type: Number,
+      default: 0,
     },
     body: {
-        type: String,
+      type: String,
     },
     tags: {
-        type: String
+      type: String,
     },
     reading_time: {
-        type: String,
-        select: true
-    }  
-
-},
-{ timestamps: true }
+      type: String,
+      select: true,
+    },
+  },
+  { timestamps: true }
 );
 
+const Blog = mongoose.model("Blog", blogSchema);
 
-const Blog = mongoose.model('Blog', blogSchema)
-
-
-module.exports = Blog
+module.exports = Blog;

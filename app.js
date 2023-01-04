@@ -1,12 +1,11 @@
 const path = require("path");
 const express = require("express");
 const cookieParser = require("cookie-parser");
-const cors = require('cors')
+const cors = require("cors");
 
 const blogRouter = require("./Routes/blogRoute");
 const userRouter = require("./Routes/userRoute");
 const viewRouter = require("./Routes/viewRoutes");
-const { base } = require("./Models/blogModel");
 
 const app = express();
 
@@ -16,9 +15,15 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(cors({
-  origin: ['http://127.0.0.1:4000/user/login', 'http://127.0.0.1:4000/user/logout', 'http://127.0.0.1:4000/user/signup']
-}));
+app.use(
+  cors({
+    origin: [
+      "http://127.0.0.1:4000/user/login",
+      "http://127.0.0.1:4000/user/logout",
+      "http://127.0.0.1:4000/user/signup",
+    ],
+  })
+);
 
 app.use(express.json());
 app.use(cookieParser()); // Cookie-parser for making cookie available in the browser
@@ -26,7 +31,7 @@ app.use(cookieParser()); // Cookie-parser for making cookie available in the bro
 //Api Routes
 app.use("/", viewRouter);
 app.use("/blog", blogRouter);
-app.use("/user", userRouter);
+app.use("/api/v1/user", userRouter);
 
 //Middleware for Unhandled routes
 app.all("*", async (req, res, next) => {
@@ -47,6 +52,5 @@ app.use((err, req, res, next) => {
     message: err.message,
   });
 });
-
 
 module.exports = app;
