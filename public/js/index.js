@@ -35,7 +35,7 @@ const login = async (email, password) => {
     }
     return;
   } catch (err) {
-    showAlert("error", err.response.data.message);
+    showAlert("error", 'Invalid username or password');
   }
 };
 
